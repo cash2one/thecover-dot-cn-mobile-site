@@ -256,3 +256,54 @@ body.transparent {
     vertical-align: middle;
     border: none
 }
+/* 封面号 */
+
+.details-media {
+    border-top: 1px solid #e0e0e0;
+    display: inline-block;
+    width: 100%;
+    padding-top: .7rem;
+    display: none;
+}
+
+.details-media-headimg {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 2.25rem;
+    display: inline-block;
+    float: left;
+}
+
+.details-media-content {
+    line-height: 1.125rem;
+    margin-left: .625rem;
+    float: left;
+    height: 2.25rem;
+    width: 11.25rem;
+    overflow: hidden;
+}
+
+.dmc-title {
+    font-size: .9rem;
+    color: #303030;
+}
+
+.dmc-desc {
+    font-size: .625rem;
+    color: #a3a3a3;
+    word-break: break-all;
+}
+
+.details-media-btn {
+    background: #e55b4a;
+    float: right;
+    text-align: center;
+    line-height: 1.4rem;
+    color: #ffffff;
+    border-radius: .7rem;
+    font-size: .7rem;
+    width: 3.5rem;
+    height: 1.4rem;
+    display: inline-block;
+    margin-top: .425rem;
+}

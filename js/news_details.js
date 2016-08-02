@@ -48,6 +48,7 @@ define(function (require) {
         $('#startload').hide();
         $('body').removeClass('transparent');
       });
+      this.getDynamic();
       this.initTalk();
     },
     getReplyList: function () {
@@ -58,6 +59,26 @@ define(function (require) {
           });
       // console.log(payload);
       return COVER.$post(COVER.apis().getReplyList, payload);
+    },
+    // 新闻详情底部信息
+    getDynamic: function () {
+      var newsid = {
+        news_id: id
+      };
+      COVER.$post(COVER.apis().getDynamic, {
+        data: JSON.stringify(newsid)
+      }).then(function (ret) {
+        if (!COVER.isEmpty(ret)) {
+          $('.details-media-headimg').attr('src', ret.head_img);
+          $('.dmc-title').text(ret.subject_name);
+          $('.dmc-desc').text(ret.subject_desc);
+          $('.details-media').css('display', 'inline-block');
+          $('.details-media-content, .details-media-headimg').on('click', function () {
+            var url = 'http://m.thecover.cn/subject.html?' + 'id=' + ret.subject_id + '&' + 'channel_type=' + ret.channel_type;
+            return location.href = url;
+          });
+        }
+      });
     },
     initTalk: function () {
       var self = this;

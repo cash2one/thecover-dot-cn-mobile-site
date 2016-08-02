@@ -116,6 +116,7 @@ define(function (require) {
     tpl_cover_image: function () {
       return [
         '<div class="cover-img ${class_name}" style="height:${big_img_height};background-image:url(${big_img});">',
+        '  <div class="layer"></div>',
         '  <p id="subject_name">',
         '    ${subject_name}',
         '  </p>',
